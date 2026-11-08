@@ -1,6 +1,7 @@
-// Basqah site: language, nav state, reveal on scroll, before/after switch, team accordion.
+// Basqah site: language, nav state, scroll story, team flip cards, reveal on scroll.
 (function () {
   var root = document.documentElement;
+  var hasJS = root.classList.contains('js');
 
   document.getElementById('langBtn').addEventListener('click', function () {
     var lang = root.lang === 'ar' ? 'en' : 'ar';
@@ -16,28 +17,49 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // team: each card opens to show contact links
-  document.querySelectorAll('.m-head').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      btn.closest('.member').classList.toggle('open', !open);
-    });
+  // "From the sky to the palm": the sticky stage follows whichever step is in the middle of the screen
+  var stage = document.getElementById('stage');
+  var steps = document.querySelectorAll('.step');
+  function setStep(n) {
+    stage.dataset.step = n;
+    steps.forEach(function (s) { s.classList.toggle('active', s.dataset.step === String(n)); });
+  }
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setStep(e.target.dataset.step); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    steps.forEach(function (s) { so.observe(s); });
+  }
+  steps.forEach(function (s) { s.addEventListener('click', function () { setStep(s.dataset.step); }); });
+
+  // team: tap a founder to flip the card to their contacts
+  document.querySelectorAll('.member').forEach(function (m) {
+    var front = m.querySelector('.front');
+    function toggle(open) {
+      m.classList.toggle('open', open);
+      front.setAttribute('aria-expanded', String(open));
+    }
+    front.addEventListener('click', function () { toggle(true); });
+    m.querySelector('.b-close').addEventListener('click', function () { toggle(false); front.focus(); });
   });
 
-  // reveal on scroll (staggered within each group)
+  // reveal on scroll (staggered within each group); founders get "scanned" once on touch screens
+  var touch = window.matchMedia('(hover: none)').matches;
   var items = document.querySelectorAll('.reveal');
-  if (!root.classList.contains('js') || !('IntersectionObserver' in window)) {
+  if (!hasJS || !('IntersectionObserver' in window)) {
     items.forEach(function (el) { el.classList.add('in'); });
     return;
   }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
-      var sibs = Array.prototype.filter.call(e.target.parentElement.children, function (c) { return c.classList.contains('reveal'); });
-      e.target.style.transitionDelay = Math.min(sibs.indexOf(e.target), 5) * 80 + 'ms';
-      e.target.classList.add('in');
-      io.unobserve(e.target);
+      var el = e.target;
+      var sibs = Array.prototype.filter.call(el.parentElement.children, function (c) { return c.classList.contains('reveal'); });
+      var delay = Math.min(sibs.indexOf(el), 5) * 90;
+      el.style.transitionDelay = delay + 'ms';
+      el.classList.add('in');
+      if (touch && el.classList.contains('member')) setTimeout(function () { el.classList.add('scanned'); }, delay + 700);
+      io.unobserve(el);
     });
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
   items.forEach(function (el) { io.observe(el); });
