@@ -49,13 +49,22 @@
     s.addEventListener('click', function () { setStep(s.dataset.step); pauseUntil = Date.now() + 6000; });
   });
 
-  // team: tap a founder to flip to their contacts, tap the back to flip again
+  // team: tap a founder to flip to their contacts, tap the back to flip again.
+  // A 2-D flip (squash → swap faces → open) — smooth on every device and nothing bleeds through.
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.member').forEach(function (m) {
-    var front = m.querySelector('.front'), back = m.querySelector('.back');
+    var front = m.querySelector('.front'), back = m.querySelector('.back'), busy = false;
     function toggle(open) {
-      m.classList.toggle('open', open);
-      front.setAttribute('aria-expanded', String(open));
-      (open ? back : front).focus({ preventScroll: true });
+      if (busy) return;
+      var swap = function () {
+        m.classList.toggle('open', open);
+        front.setAttribute('aria-expanded', String(open));
+        (open ? back : front).focus({ preventScroll: true });
+      };
+      if (reduceMotion) { swap(); return; }
+      busy = true;
+      m.classList.add('squash');
+      setTimeout(function () { swap(); m.classList.remove('squash'); setTimeout(function () { busy = false; }, 280); }, 270);
     }
     front.addEventListener('click', function () { toggle(true); });
     back.addEventListener('click', function (e) { if (!e.target.closest('a')) toggle(false); });

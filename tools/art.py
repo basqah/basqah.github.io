@@ -121,11 +121,13 @@ def twin_art():
     o.append('<ellipse cx="140" cy="382" rx="56" ry="6" fill="#0b2216" opacity=".45"/>')
     o.append(f'<g transform="translate(140 380) scale({s})">{palm()}</g>')
     o.append(f'<g transform="translate(420 380) scale({s})" class="wire">{palm_wire()}</g>')
-    # both paths are drawn in the direction their data travels, so one dash animation moves each the right way
-    o.append('<path class="flow" d="M212 150C260 120 300 120 348 150" fill="none" stroke="#BCD8C3" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>'
-             '<path class="flow" d="M348 250C300 280 260 280 212 250" fill="none" stroke="#D99114" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>'
-             '<path d="M340 142l10 8-12 4" fill="none" stroke="#BCD8C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
-             '<path d="M220 258l-10-8 12-4" fill="none" stroke="#D99114" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>')
+    # both paths are drawn in the direction their data travels; arrowheads are markers that follow each path's end tangent
+    o.insert(1, '<defs><marker id="ahM" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">'
+                '<path d="M2 2L10 6L2 10" fill="none" stroke="#BCD8C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker>'
+                '<marker id="ahA" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">'
+                '<path d="M2 2L10 6L2 10" fill="none" stroke="#D99114" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>')
+    o.append('<path class="flow" d="M214 156C262 124 302 124 344 152" fill="none" stroke="#BCD8C3" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#ahM)"/>'
+             '<path class="flow" d="M346 246C298 276 258 276 216 248" fill="none" stroke="#D99114" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#ahA)"/>')
     o.append('</svg>')
     return ''.join(o)
 
