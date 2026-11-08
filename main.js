@@ -1,8 +1,7 @@
-// Basqah site: language toggle, solid nav on scroll, reveal-on-scroll.
+// Basqah site: language, nav state, reveal on scroll, before/after switch, team accordion.
 (function () {
   var root = document.documentElement;
 
-  // language (initial value is set in <head> before paint)
   document.getElementById('langBtn').addEventListener('click', function () {
     var lang = root.lang === 'ar' ? 'en' : 'ar';
     root.lang = lang;
@@ -10,22 +9,45 @@
     try { localStorage.setItem('basqah-lang', lang); } catch (e) {}
   });
 
-  // nav gets a solid background once the page scrolls
+  // nav: transparent over the hero, solid light bar after it
   var nav = document.getElementById('nav');
-  function onScroll() { nav.classList.toggle('solid', window.scrollY > 24); }
+  var hero = document.querySelector('.hero');
+  function onScroll() { nav.classList.toggle('solid', window.scrollY > hero.offsetHeight - 80); }
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // reveal sections as they enter the viewport
+  // before / after segmented control
+  var ba = document.getElementById('ba');
+  ba.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      ba.dataset.state = b.dataset.to;
+      ba.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-selected', String(x === b)); });
+    });
+  });
+
+  // team: each card opens to show contact links
+  document.querySelectorAll('.m-head').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.closest('.member').classList.toggle('open', !open);
+    });
+  });
+
+  // reveal on scroll (staggered within each group)
   var items = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('in'); }); return; }
+  if (!root.classList.contains('js') || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      if (!e.isIntersecting) return;
+      var sibs = Array.prototype.filter.call(e.target.parentElement.children, function (c) { return c.classList.contains('reveal'); });
+      e.target.style.transitionDelay = Math.min(sibs.indexOf(e.target), 5) * 80 + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-  items.forEach(function (el, i) {
-    el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
-    io.observe(el);
-  });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+  items.forEach(function (el) { io.observe(el); });
 })();
