@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>باسِقة | Basqah</title>
-<meta name="description" content="باسِقة تكشف سوسة النخيل الحمراء مبكراً بالدرون والذكاء الاصطناعي. Basqah detects the red palm weevil early, using drones and AI.">
+<title>باسِقة | Basqah — الكشف المبكر عن سوسة النخيل الحمراء</title>
+<meta name="description" content="باسِقة تكشف سوسة النخيل الحمراء مبكراً بالدرون والذكاء الاصطناعي، وتبني لكل نخلة توأماً رقمياً. Basqah detects the red palm weevil early with drones and AI, giving every palm a digital twin.">
 <meta name="theme-color" content="#183A2B">
+<meta property="og:title" content="Basqah | باسِقة">
+<meta property="og:description" content="A digital twin for every palm — early detection of the red palm weevil with drones and AI.">
 <link rel="icon" href="assets/basqah-mark-green.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/thmanyahserifdisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/thmanyahsans-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script>
-  // pick the language before first paint: ?lang= → saved choice → device language
+  // language before first paint: ?lang= → saved choice → device language
   (function () {
     var q = new URLSearchParams(location.search).get('lang'), saved = null;
     try { saved = localStorage.getItem('basqah-lang'); } catch (e) {}
@@ -17,129 +21,221 @@
     var lang = q === 'en' || q === 'ar' ? q : saved || (nav.indexOf('ar') === 0 ? 'ar' : 'en');
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    if (new URLSearchParams(location.search).has('static')) return; // for screenshots: no scroll animation
+    document.documentElement.classList.add('js');
   })();
 </script>
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a href="#top" class="brand" aria-label="Basqah"><img src="assets/basqah-wordmark-white.svg" alt="basqah"></a>
-    <nav class="links">
-      <a href="#idea"><span lang="ar">الفكرة</span><span lang="en">The idea</span></a>
+    <a href="#top" class="brand" aria-label="Basqah"><img src="assets/basqah-wordmark-white.svg" alt="basqah" width="104" height="50"></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#problem"><span lang="ar">المشكلة</span><span lang="en">Problem</span></a>
       <a href="#how"><span lang="ar">كيف تعمل</span><span lang="en">How it works</span></a>
+      <a href="#product"><span lang="ar">المنتج</span><span lang="en">Product</span></a>
       <a href="#team"><span lang="ar">الفريق</span><span lang="en">Team</span></a>
-      <a href="#contact"><span lang="ar">تواصل</span><span lang="en">Contact</span></a>
     </nav>
-    <button class="lang" type="button" id="langBtn"><span lang="ar">English</span><span lang="en">عربي</span></button>
+    <div class="nav-actions">
+      <button class="lang" type="button" id="langBtn" aria-label="Switch language"><span lang="ar">EN</span><span lang="en">ع</span></button>
+      <a class="btn btn-sm" href="#contact"><span lang="ar">تواصل معنا</span><span lang="en">Contact us</span></a>
+    </div>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
-    <img class="hero-bg" src="assets/orchard.svg" alt="">
-    <div class="hero-veil"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-in">
-      <h1>
-        <span lang="ar">لكل نخلة<br><mark>توأم رقمـي</mark></span>
-        <span lang="en">A digital twin<br><mark>for every palm</mark></span>
-      </h1>
-      <p class="lead">
-        <span lang="ar">باسِقة تكشف سوسة النخيل الحمراء مبكراً بالدرون والذكاء الاصطناعي، قبل أن تنتشر في المزرعة.</span>
-        <span lang="en">Basqah detects the red palm weevil early, using drones and AI, before it spreads through the farm.</span>
-      </p>
-      <a class="btn" href="#contact"><span lang="ar">تواصل معنا</span><span lang="en">Get in touch</span></a>
-    </div>
-  </section>
+      <div class="hero-copy">
+        <p class="pill reveal"><i></i><span lang="ar">الكشف المبكر عن سوسة النخيل الحمراء</span><span lang="en">Early detection of the red palm weevil</span></p>
+        <h1 class="reveal">
+          <span lang="ar">لكل نخلة<br><mark>توأم رقمـي</mark></span>
+          <span lang="en">A digital twin<br><mark>for every palm</mark></span>
+        </h1>
+        <p class="lead reveal">
+          <span lang="ar">باسِقة تمسح المزرعة بالدرون، وتحلل كل نخلة بالذكاء الاصطناعي، وتنبّه المزارع قبل أن تنتشر الإصابة.</span>
+          <span lang="en">Basqah scans the farm by drone, analyses every palm with AI, and alerts the farmer before an infestation spreads.</span>
+        </p>
+        <div class="cta reveal">
+          <a class="btn" href="#contact"><span lang="ar">تواصل معنا</span><span lang="en">Get in touch</span></a>
+          <a class="btn btn-ghost" href="#how"><span lang="ar">كيف تعمل</span><span lang="en">See how it works</span></a>
+        </div>
+      </div>
 
-  <!-- IDEA -->
-  <section class="idea" id="idea">
-    <div class="wrap idea-in">
-      <p class="kicker"><span lang="ar">المشكلة</span><span lang="en">The problem</span></p>
-      <h2><span lang="ar">عدوٌّ لا يُرى</span><span lang="en">An enemy you can’t see</span></h2>
-      <div class="cols">
-        <p>
-          <span lang="ar">سوسة النخيل الحمراء تتغذى على النخلة من الداخل. وحين تظهر العلامات على الجذع أو السعف، يكون الضرر قد وقع في الغالب، وتكون السوسة قد انتقلت إلى النخيل المجاور.</span>
-          <span lang="en">The red palm weevil feeds on the palm from the inside. By the time signs show on the trunk or fronds, the damage is usually done, and the weevil has already moved on to nearby palms.</span>
-        </p>
-        <p>
-          <span lang="ar">الفحص اليدوي نخلةً نخلة بطيء ومكلف، ولا يكفي لمزرعة فيها مئات النخيل. باسِقة تجعل الفحص دورياً وسريعاً، وتوجّه المزارع إلى النخلة التي تحتاجه فعلاً.</span>
-          <span lang="en">Checking palms one by one is slow and costly, and it doesn’t scale to a farm with hundreds of palms. Basqah makes inspection routine and fast, and sends the farmer straight to the palm that needs attention.</span>
-        </p>
+      <!-- product visual: the farm map on a phone -->
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="phone">
+          <div class="screen">
+            <img class="farm" src="assets/farm.svg" alt="">
+            <div class="scan"></div>
+            <span class="marker watch" style="left:40.04%;top:26.52%"></span>
+            <span class="marker urgent" style="left:65.22%;top:37.73%"></span>
+            <div class="app-top">
+              <span class="app-title"><span lang="ar">المزرعة</span><span lang="en">My farm</span></span>
+              <span class="app-chip"><b>٢٣٨</b><span lang="ar">نخلة</span><span lang="en">palms</span></span>
+            </div>
+            <div class="sheet">
+              <span class="grab"></span>
+              <p class="sheet-h"><span lang="ar">المطلوب</span><span lang="en">To do</span><b>2</b></p>
+              <div class="task"><i class="urgent"></i><div><b><span lang="ar">نخلة تحتاج فحصاً عاجلاً</span><span lang="en">Palm needs urgent check</span></b><small><span lang="ar">القطاع الشمالي · الصف ٤</span><span lang="en">North block · Row 4</span></small></div></div>
+              <div class="task"><i class="watch"></i><div><b><span lang="ar">رطوبة تربة مرتفعة</span><span lang="en">High soil moisture</span></b><small><span lang="ar">القطاع الشمالي · الصف ٣</span><span lang="en">North block · Row 3</span></small></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card">
+          <span class="fc-dot"></span>
+          <div>
+            <b><span lang="ar">اشتباه إصابة مبكرة</span><span lang="en">Early infestation suspected</span></b>
+            <small><span lang="ar">ارتفاع حرارة الجذع · قبل ظهور العلامات</span><span lang="en">Trunk heat rising · before visible signs</span></small>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW -->
+  <!-- ================= PROBLEM ================= -->
+  <section class="problem" id="problem">
+    <div class="wrap">
+      <p class="kicker reveal"><span lang="ar">المشكلة</span><span lang="en">The problem</span></p>
+      <p class="statement reveal">
+        <span lang="ar">سوسة النخيل الحمراء تأكل النخلة <em>من الداخل</em>. وحين تظهر العلامات على الجذع، يكون الضرر قد وقع، وتكون السوسة قد انتقلت إلى ما حولها.</span>
+        <span lang="en">The red palm weevil eats the palm <em>from the inside</em>. By the time signs reach the trunk, the damage is done, and the weevil has moved on to its neighbours.</span>
+      </p>
+      <div class="facts">
+        <div class="fact reveal">
+          <h3><span lang="ar">تختبئ داخل الجذع</span><span lang="en">Hidden in the trunk</span></h3>
+          <p><span lang="ar">اليرقات تحفر داخل النخلة، فلا يلاحظها المزارع بالعين في البداية.</span><span lang="en">Larvae tunnel inside the palm, out of sight in the early stages.</span></p>
+        </div>
+        <div class="fact reveal">
+          <h3><span lang="ar">تنتشر بصمت</span><span lang="en">Spreads quietly</span></h3>
+          <p><span lang="ar">النخلة المصابة تصبح مصدراً للنخيل المجاور، والتأخير يضاعف الخسارة.</span><span lang="en">One infested palm seeds its neighbours; every week of delay costs more.</span></p>
+        </div>
+        <div class="fact reveal">
+          <h3><span lang="ar">الفحص اليدوي لا يكفي</span><span lang="en">Manual checks don’t scale</span></h3>
+          <p><span lang="ar">المرور على مئات النخيل واحدةً واحدة بطيء ومكلف، ولا يحدث بانتظام.</span><span lang="en">Walking hundreds of palms one by one is slow, costly and rarely regular.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW ================= -->
   <section class="how" id="how">
     <div class="wrap">
-      <p class="kicker"><span lang="ar">كيف تعمل</span><span lang="en">How it works</span></p>
-      <h2><span lang="ar">من المسح إلى النخلة</span><span lang="en">From scan to palm</span></h2>
+      <p class="kicker reveal"><span lang="ar">كيف تعمل</span><span lang="en">How it works</span></p>
+      <h2 class="reveal"><span lang="ar">من المسح إلى النخلة، في ثلاث خطوات</span><span lang="en">From scan to palm, in three steps</span></h2>
       <ol class="steps">
-        <li>
-          <b>١<i>1</i></b>
+        <li class="step reveal">
+          <svg class="ill" viewBox="0 0 160 110" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M58 26h44M50 22h16M94 22h16"/><rect x="70" y="24" width="20" height="10" rx="5"/>
+              <path d="M74 34 52 92M86 34l22 58" stroke-dasharray="3 5" opacity=".55"/>
+              <path d="M40 96h80"/>
+              <path d="M80 96V70M80 70c-8-6-16-6-22-2M80 70c8-6 16-6 22-2M80 70c-4-8-4-14 0-18M80 70c4-8 4-14 0-18"/>
+            </g>
+          </svg>
+          <span class="num"><span lang="ar">٠١</span><span lang="en">01</span></span>
           <h3><span lang="ar">يمسح الدرون المزرعة</span><span lang="en">A drone scans the farm</span></h3>
-          <p><span lang="ar">صور حرارية وطيفية لكل نخلة، مع قراءات حساسات التربة.</span><span lang="en">Thermal and spectral imagery of every palm, plus soil-sensor readings.</span></p>
+          <p><span lang="ar">صور حرارية وطيفية لكل نخلة، مع قراءات حساسات رطوبة التربة.</span><span lang="en">Thermal and spectral imagery of every palm, plus soil-moisture sensor readings.</span></p>
         </li>
-        <li>
-          <b>٢<i>2</i></b>
-          <h3><span lang="ar">يحلل الذكاء الاصطناعي</span><span lang="en">AI analyses each palm</span></h3>
-          <p><span lang="ar">لكل نخلة توأم رقمي يسجّل حالتها، ويلتقط علامات الإصابة المبكرة.</span><span lang="en">Each palm gets a digital twin that tracks its health and catches early signs of infestation.</span></p>
+        <li class="step reveal">
+          <svg class="ill" viewBox="0 0 160 110" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M52 96V62M52 62c-7-5-14-5-19-1M52 62c7-5 14-5 19-1M52 62c-3-7-3-12 0-16M52 62c3-7 3-12 0-16"/>
+              <path d="M108 96V62M108 62c-7-5-14-5-19-1M108 62c7-5 14-5 19-1M108 62c-3-7-3-12 0-16M108 62c3-7 3-12 0-16" stroke-dasharray="2 4"/>
+              <path d="M66 52h28M88 46l6 6-6 6" opacity=".7"/>
+              <circle cx="108" cy="40" r="6"/><path d="M108 28v4M108 48v4M96 40h4M116 40h4"/>
+              <path d="M36 96h88"/>
+            </g>
+          </svg>
+          <span class="num"><span lang="ar">٠٢</span><span lang="en">02</span></span>
+          <h3><span lang="ar">يبني لكل نخلة توأماً رقمياً</span><span lang="en">Every palm gets a digital twin</span></h3>
+          <p><span lang="ar">نماذج الذكاء الاصطناعي تقرأ الحرارة والطيف والضرر الظاهر، وتلتقط علامات الإصابة المبكرة.</span><span lang="en">AI models read heat, spectral signals and visible damage, and catch early signs of infestation.</span></p>
         </li>
-        <li>
-          <b>٣<i>3</i></b>
+        <li class="step reveal">
+          <svg class="ill" viewBox="0 0 160 110" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="58" y="10" width="44" height="88" rx="9"/><path d="M74 16h12"/>
+              <circle cx="80" cy="48" r="9"/><circle cx="80" cy="48" r="16" opacity=".45"/>
+              <path d="M66 80h28M66 88h18" opacity=".7"/>
+              <path d="M112 44h22M126 36l8 8-8 8"/>
+            </g>
+          </svg>
+          <span class="num"><span lang="ar">٠٣</span><span lang="en">03</span></span>
           <h3><span lang="ar">يتحرك المزارع في الوقت المناسب</span><span lang="en">The farmer acts in time</span></h3>
-          <p><span lang="ar">تنبيه بما هو مطلوب، وموقع النخلة على الخريطة، وتقرير للنخيل المصابة.</span><span lang="en">A clear to-do, the palm’s exact spot on the map, and a report for infested palms.</span></p>
+          <p><span lang="ar">قائمة واضحة بالمطلوب، وموقع النخلة على الخريطة، وتوجيه حتى يصل إليها.</span><span lang="en">A clear to-do list, the palm’s spot on the map, and directions right to it.</span></p>
         </li>
       </ol>
+    </div>
+  </section>
 
-      <div class="map">
-        <svg class="map-art" viewBox="0 0 360 200" role="img" aria-label="">
-          <defs>
-            <pattern id="row" x="12" y="16" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="12" cy="12" r="5.2" fill="#BCD8C3" opacity=".55"/></pattern>
-          </defs>
-          <rect x="0" y="0" width="360" height="200" rx="14" fill="#1F4534"/>
-          <rect x="12" y="16" width="336" height="168" fill="url(#row)"/>
-          <circle cx="168" cy="76" r="7.5" fill="#D99114"/>
-          <circle cx="168" cy="76" r="13" fill="none" stroke="#D99114" stroke-width="1.5"/>
-          <circle cx="264" cy="148" r="7.5" fill="#D94C45"/>
-          <circle cx="264" cy="148" r="13" fill="none" stroke="#D94C45" stroke-width="1.5"/>
-          <circle cx="264" cy="148" r="19" fill="none" stroke="#D94C45" stroke-width="1" opacity=".5"/>
-        </svg>
-        <ul class="legend">
-          <li><i class="ok"></i><span lang="ar">سليمة</span><span lang="en">Healthy</span></li>
-          <li><i class="watch"></i><span lang="ar">تحت المراقبة</span><span lang="en">Under watch</span></li>
-          <li><i class="urgent"></i><span lang="ar">تحتاج فحصاً عاجلاً</span><span lang="en">Needs urgent check</span></li>
+  <!-- ================= PRODUCT ================= -->
+  <section class="product" id="product">
+    <div class="wrap product-in">
+      <div class="product-copy">
+        <p class="kicker reveal"><span lang="ar">ماذا يرى المزارع</span><span lang="en">What the farmer sees</span></p>
+        <h2 class="reveal"><span lang="ar">خريطة هادئة حين يكون كل شيء سليماً، وواضحة حين تظهر مشكلة</span><span lang="en">A calm map when all is well, and a clear one when something isn’t</span></h2>
+        <ul class="features">
+          <li class="reveal"><h3><span lang="ar">حالة كل نخلة على الخريطة</span><span lang="en">Every palm on the map</span></h3><p><span lang="ar">النخيل السليم هادئ، والمشكلات تظهر بلون واضح يسهل رؤيته تحت الشمس.</span><span lang="en">Healthy palms stay quiet; problems stand out in colours that read in full sun.</span></p></li>
+          <li class="reveal"><h3><span lang="ar">«المطلوب» في قائمة واحدة</span><span lang="en">One “to do” list</span></h3><p><span lang="ar">التنبيهات والمهام معاً، مرتبة حسب الأهمية، مع سبب كل تنبيه.</span><span lang="en">Alerts and tasks together, ordered by urgency, each with its reason.</span></p></li>
+          <li class="reveal"><h3><span lang="ar">«وديني للنخلة»</span><span lang="en">“Take me to the palm”</span></h3><p><span lang="ar">يوجّه الجوال المزارع إلى النخلة المقصودة في الحقل مباشرة.</span><span lang="en">The phone guides the farmer straight to the right palm in the field.</span></p></li>
+          <li class="reveal"><h3><span lang="ar">تقرير الحالات المصابة</span><span lang="en">Infestation report</span></h3><p><span lang="ar">الموقع والصور والتواريخ وملخص التحليل في ملف واحد، يصلح أساساً للبلاغ.</span><span lang="en">Locations, photos, dates and the analysis in one file, ready to back a report.</span></p></li>
         </ul>
-        <p class="map-note"><span lang="ar">الخريطة هادئة حين يكون كل شيء سليماً، وواضحة حين تظهر مشكلة.</span><span lang="en">The map stays calm when all is well, and speaks up when something isn’t.</span></p>
+      </div>
+      <div class="scale reveal">
+        <p class="scale-h"><span lang="ar">مقياس الحالات</span><span lang="en">Health scale</span></p>
+        <ol>
+          <li><i class="s-ok"></i><div><b><span lang="ar">سليمة</span><span lang="en">Healthy</span></b><small><span lang="ar">لا توجد مؤشرات تستدعي القلق</span><span lang="en">No signs of concern</span></small></div></li>
+          <li><i class="s-watch"></i><div><b><span lang="ar">تحت المراقبة</span><span lang="en">Under watch</span></b><small><span lang="ar">رطوبة تربة مرتفعة، أو توتر في السعف، أو جرح في الجذع</span><span lang="en">High soil moisture, frond stress, or a trunk wound</span></small></div></li>
+          <li><i class="s-urgent"></i><div><b><span lang="ar">تحتاج فحصاً عاجلاً</span><span lang="en">Needs urgent check</span></b><small><span lang="ar">اشتباه إصابة مبكرة من القراءات الحرارية والطيفية</span><span lang="en">Early infestation suspected from thermal and spectral readings</span></small></div></li>
+          <li><i class="s-confirmed"></i><div><b><span lang="ar">إصابة مؤكدة</span><span lang="en">Confirmed</span></b><small><span lang="ar">بعد المعاينة الميدانية، ومنها يبدأ التقرير</span><span lang="en">After a field check; the report starts here</span></small></div></li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <!-- TEAM -->
+  <!-- ================= TECH ================= -->
+  <section class="tech">
+    <div class="wrap">
+      <p class="kicker reveal"><span lang="ar">التقنية</span><span lang="en">Technology</span></p>
+      <h2 class="reveal"><span lang="ar">ثلاثة مصادر، وقرار واحد</span><span lang="en">Three sources, one decision</span></h2>
+      <div class="tech-grid">
+        <div class="reveal"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h12M28 14h12M14 14v3M34 14v3"/><rect x="17" y="16" width="14" height="8" rx="4"/><path d="M20 24l-5 16M28 24l5 16" stroke-dasharray="2 4"/></g></svg><h3><span lang="ar">الدرون</span><span lang="en">Drone</span></h3><p><span lang="ar">مسح دوري بكاميرا حرارية وطيفية يغطي المزرعة كاملة في وقت قصير.</span><span lang="en">Routine thermal and spectral flights that cover the whole farm quickly.</span></p></div>
+        <div class="reveal"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 36h36"/><path d="M24 36V12"/><rect x="19" y="8" width="10" height="10" rx="2"/><path d="M14 30c3-3 6-3 9 0M25 30c3-3 6-3 9 0" opacity=".7"/></g></svg><h3><span lang="ar">حساسات التربة</span><span lang="en">Soil sensors</span></h3><p><span lang="ar">قراءات الرطوبة والحرارة حول النخيل، لأن الرطوبة الزائدة بيئة مناسبة للسوسة.</span><span lang="en">Moisture and temperature around the palms, since excess moisture invites the weevil.</span></p></div>
+        <div class="reveal"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="13" width="22" height="22" rx="4"/><rect x="19" y="19" width="10" height="10" rx="2"/><path d="M19 8v5M29 8v5M19 35v5M29 35v5M8 19h5M8 29h5M35 19h5M35 29h5"/></g></svg><h3><span lang="ar">الذكاء الاصطناعي</span><span lang="en">AI</span></h3><p><span lang="ar">نماذج للاشتباه الحراري والطيفي والضرر الظاهر، ووكيل يحوّل النتائج إلى خطوات واضحة.</span><span lang="en">Models for thermal, spectral and visible-damage signals, and an agent that turns results into clear next steps.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TEAM ================= -->
   <section class="team" id="team">
     <div class="wrap">
-      <p class="kicker"><span lang="ar">الفريق</span><span lang="en">The team</span></p>
-      <h2><span lang="ar">من يقف وراء باسِقة</span><span lang="en">The people behind Basqah</span></h2>
+      <p class="kicker reveal"><span lang="ar">الفريق</span><span lang="en">The team</span></p>
+      <h2 class="reveal"><span lang="ar">من يقف وراء باسِقة</span><span lang="en">The people behind Basqah</span></h2>
       <ul class="people">
-        <li>
+        <li class="reveal">
+          <span class="mono"><span lang="ar">ر</span><span lang="en">R</span></span>
           <h3><span lang="ar">رنا النجاشي</span><span lang="en">Rana Alnajashi</span></h3>
           <p class="role"><span lang="ar">المؤسِّسة · قائدة المشروع</span><span lang="en">Founder · Project Lead</span></p>
           <p><span lang="ar">مهندسة ذكاء اصطناعي وتعلّم آلة</span><span lang="en">Lead AI/ML Engineer</span></p>
         </li>
-        <li>
+        <li class="reveal">
+          <span class="mono"><span lang="ar">أ</span><span lang="en">A</span></span>
           <h3><span lang="ar">أحمد الرشيد</span><span lang="en">Ahmed Alrasheed</span></h3>
           <p class="role"><span lang="ar">شريك مؤسِّس</span><span lang="en">Co-Founder</span></p>
           <p><span lang="ar">مهندس وكلاء الذكاء الاصطناعي · مطوّر الخادم</span><span lang="en">AI Agent Engineer · Backend Developer</span></p>
         </li>
-        <li>
+        <li class="reveal">
+          <span class="mono"><span lang="ar">ر</span><span lang="en">R</span></span>
           <h3><span lang="ar">رغد الحلوه</span><span lang="en">Raghad Alhelwah</span></h3>
           <p class="role"><span lang="ar">شريكة مؤسِّسة</span><span lang="en">Co-Founder</span></p>
           <p><span lang="ar">مهندسة معمارية الأنظمة · مهندسة الأجهزة</span><span lang="en">System Architect · Hardware Engineer</span></p>
         </li>
-        <li>
+        <li class="reveal">
+          <span class="mono"><span lang="ar">ن</span><span lang="en">N</span></span>
           <h3><span lang="ar">نوره الفايز</span><span lang="en">Noura Alfaiz</span></h3>
           <p class="role"><span lang="ar">شريكة مؤسِّسة</span><span lang="en">Co-Founder</span></p>
           <p><span lang="ar">مصممة تجربة المستخدم · مطوّرة الواجهات</span><span lang="en">UI/UX Designer · Frontend Developer</span></p>
@@ -148,15 +244,17 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ================= CONTACT ================= -->
   <section class="contact" id="contact">
     <div class="wrap contact-in">
-      <h2><span lang="ar">لنتحدث</span><span lang="en">Let’s talk</span></h2>
-      <p class="lead"><span lang="ar">مستثمر، أو مزارع، أو جهة مهتمة بحماية النخيل؟ يسعدنا تواصلك.</span><span lang="en">Investor, farmer, or working to protect palms? We’d love to hear from you.</span></p>
-      <div class="channels">
-        <a href="mailto:basqah.sa@gmail.com"><small><span lang="ar">البريد</span><span lang="en">Email</span></small><bdi>basqah.sa@gmail.com</bdi></a>
-        <a href="tel:+966507069045"><small><span lang="ar">الجوال</span><span lang="en">Phone</span></small><bdi>+966 50 706 9045</bdi></a>
-        <a href="https://wa.me/966507069045" target="_blank" rel="noopener"><small><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></small><bdi>+966 50 706 9045</bdi></a>
+      <div>
+        <h2 class="reveal"><span lang="ar">لنحمِ النخيل معاً</span><span lang="en">Let’s protect palms together</span></h2>
+        <p class="lead reveal"><span lang="ar">مستثمر، أو مزارع، أو جهة تعمل على حماية النخيل؟ يسعدنا أن نتحدث معك.</span><span lang="en">Investor, farmer, or working to protect palms? We’d love to talk.</span></p>
+      </div>
+      <div class="channels reveal">
+        <a href="mailto:basqah.sa@gmail.com"><small><span lang="ar">البريد الإلكتروني</span><span lang="en">Email</span></small><bdi>basqah.sa@gmail.com</bdi><i class="arr" aria-hidden="true"></i></a>
+        <a href="https://wa.me/966507069045" target="_blank" rel="noopener"><small><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></small><bdi>+966 50 706 9045</bdi><i class="arr" aria-hidden="true"></i></a>
+        <a href="tel:+966507069045"><small><span lang="ar">اتصال</span><span lang="en">Call</span></small><bdi>+966 50 706 9045</bdi><i class="arr" aria-hidden="true"></i></a>
       </div>
     </div>
   </section>
@@ -164,8 +262,17 @@
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <img src="assets/basqah-wordmark-white.svg" alt="basqah">
-    <p class="motto"><span lang="ar">رؤيةٌ سابقة وحمايةٌ واثقة</span><span lang="en">See it before it spreads.</span></p>
+    <div class="foot-brand">
+      <img src="assets/basqah-wordmark-white.svg" alt="basqah" width="104" height="50">
+      <p class="motto"><span lang="ar">رؤيةٌ سابقة وحمايةٌ واثقة</span><span lang="en">See it before it spreads.</span></p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#problem"><span lang="ar">المشكلة</span><span lang="en">Problem</span></a>
+      <a href="#how"><span lang="ar">كيف تعمل</span><span lang="en">How it works</span></a>
+      <a href="#product"><span lang="ar">المنتج</span><span lang="en">Product</span></a>
+      <a href="#team"><span lang="ar">الفريق</span><span lang="en">Team</span></a>
+      <a href="#contact"><span lang="ar">تواصل</span><span lang="en">Contact</span></a>
+    </nav>
     <p class="copy">© 2026 <span lang="ar">باسِقة</span><span lang="en">Basqah</span></p>
   </div>
 </footer>
