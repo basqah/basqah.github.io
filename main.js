@@ -17,30 +17,51 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // "From the sky to the palm": the sticky stage follows whichever step is in the middle of the screen
+  // "From the sky to the palm"
+  //   wide screens: the sticky stage follows whichever step is in the middle of the screen
+  //   phones: the stage sits on top and the steps play by themselves while the section is on screen
   var stage = document.getElementById('stage');
   var steps = document.querySelectorAll('.step');
+  var narrow = window.matchMedia('(max-width: 880px)');
+  var current = 1, timer = null, pauseUntil = 0;
   function setStep(n) {
-    stage.dataset.step = n;
-    steps.forEach(function (s) { s.classList.toggle('active', s.dataset.step === String(n)); });
+    current = +n;
+    stage.dataset.step = current;
+    steps.forEach(function (s) { s.classList.toggle('active', s.dataset.step === String(current)); });
   }
+  function startAuto() {
+    if (timer) return;
+    timer = setInterval(function () { if (Date.now() > pauseUntil) setStep(current % 3 + 1); }, 3400);
+  }
+  function stopAuto() { clearInterval(timer); timer = null; }
   if ('IntersectionObserver' in window) {
     var so = new IntersectionObserver(function (entries) {
+      if (narrow.matches) return;
       entries.forEach(function (e) { if (e.isIntersecting) setStep(e.target.dataset.step); });
     }, { rootMargin: '-45% 0px -50% 0px' });
     steps.forEach(function (s) { so.observe(s); });
+    new IntersectionObserver(function (entries) {
+      var on = entries[0].isIntersecting && narrow.matches && hasJS;
+      if (on) startAuto(); else stopAuto();
+    }, { threshold: .35 }).observe(document.getElementById('system'));
   }
-  steps.forEach(function (s) { s.addEventListener('click', function () { setStep(s.dataset.step); }); });
+  steps.forEach(function (s) {
+    s.addEventListener('click', function () { setStep(s.dataset.step); pauseUntil = Date.now() + 6000; });
+  });
 
-  // team: tap a founder to flip the card to their contacts
+  // team: tap a founder to flip to their contacts, tap the back to flip again
   document.querySelectorAll('.member').forEach(function (m) {
-    var front = m.querySelector('.front');
+    var front = m.querySelector('.front'), back = m.querySelector('.back');
     function toggle(open) {
       m.classList.toggle('open', open);
       front.setAttribute('aria-expanded', String(open));
+      (open ? back : front).focus({ preventScroll: true });
     }
     front.addEventListener('click', function () { toggle(true); });
-    m.querySelector('.b-close').addEventListener('click', function () { toggle(false); front.focus(); });
+    back.addEventListener('click', function (e) { if (!e.target.closest('a')) toggle(false); });
+    back.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a')) { e.preventDefault(); toggle(false); }
+    });
   });
 
   // reveal on scroll (staggered within each group); founders get "scanned" once on touch screens
