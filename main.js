@@ -16,15 +16,6 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // before / after segmented control
-  var ba = document.getElementById('ba');
-  ba.querySelectorAll('.seg button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      ba.dataset.state = b.dataset.to;
-      ba.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-selected', String(x === b)); });
-    });
-  });
-
   // team: each card opens to show contact links
   document.querySelectorAll('.m-head').forEach(function (btn) {
     btn.addEventListener('click', function () {
