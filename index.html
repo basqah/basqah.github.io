@@ -11,7 +11,7 @@
 <link rel="icon" href="assets/basqah-mark-green.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/thmanyahserifdisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/thmanyahsans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=202611082319">
+<link rel="stylesheet" href="styles.css?v=202611082329">
 <script>
   (function () {
     var p = new URLSearchParams(location.search), q = p.get('lang'), saved = null;
@@ -31,6 +31,7 @@
     <a href="#top" class="brand" aria-label="Basqah"><img class="logo-w" src="assets/basqah-wordmark-white.svg" alt="basqah"><img class="logo-g" src="assets/basqah-wordmark-green.svg" alt=""></a>
     <nav class="links" aria-label="Sections">
       <a href="#challenge"><span lang="ar">المشكلة</span><span lang="en">The problem</span></a>
+      <a href="#idea"><span lang="ar">الفكرة</span><span lang="en">The idea</span></a>
       <a href="#system"><span lang="ar">كيف تعمل</span><span lang="en">How it works</span></a>
       <a href="#who"><span lang="ar">لمن باسِقة</span><span lang="en">Who it’s for</span></a>
       <a href="#team"><span lang="ar">الفريق</span><span lang="en">Team</span></a>
@@ -67,85 +68,75 @@
 </section>
 
 <!-- ============ PROBLEM ============ -->
-<section class="challenge" id="challenge">
-  <div class="wrap">
-    <div class="sec-head center">
+<section class="problem" id="challenge">
+  <div class="wrap problem-in">
+    <div class="problem-copy">
       <p class="kicker reveal"><span lang="ar">المشكلة</span><span lang="en">The problem</span></p>
-      <h2 class="reveal"><span lang="ar">عدوٌّ لا يُرى</span><span lang="en">An enemy you can’t see</span></h2>
+      <h2 class="big reveal"><span lang="ar">تبدو سليمة…<br><span class="hl-red">لكنها تُؤكل من الداخل</span></span><span lang="en">Looks healthy.<br><span class="hl-red">Eaten from within.</span></span></h2>
+      <p class="sub reveal"><span lang="ar">سوسة النخيل الحمراء تختبئ داخل الجذع، ولا تظهر علاماتها غالباً إلا بعد فوات الأوان.</span><span lang="en">The red palm weevil hides inside the trunk, and its signs usually appear only when it’s too late.</span></p>
+      <div class="sees reveal">
+        <img src="assets/basqah-mark-green.svg" alt="" aria-hidden="true">
+        <p><span lang="ar">باسِقة ترى <b>ما لا تراه العين</b>.</span><span lang="en">Basqah sees <b>what the eye can’t</b>.</span></p>
+      </div>
     </div>
-    <div class="pa reveal" id="converge">
-      <div class="pa-card problem-card">
-        <span class="pa-tag"><span lang="ar">سوسة النخيل الحمراء</span><span lang="en">The red palm weevil</span></span>
-        <p><span lang="ar">تفتك بالنخلة من الداخل، ولا تظهر علاماتها غالباً إلا بعد فوات الأوان.</span><span lang="en">It destroys the palm from the inside, and its signs usually show only when it’s too late.</span></p>
-      </div>
-      <svg class="flow" viewBox="0 0 120 40" aria-hidden="true"><path d="M4 20H108M98 10l10 10-10 10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div class="pa-card answer">
-        <span class="pa-tag"><span lang="ar">باسِقة</span><span lang="en">Basqah</span></span>
-        <p><span lang="ar">نكشفها <em>مبكراً</em>، قبل أن تنتشر في المزرعة.</span><span lang="en">We catch it <em>early</em>, before it spreads through the farm.</span></p>
-      </div>
+    <div class="xray reveal">
+      <svg viewBox="0 0 360 470" class="reveal-art" aria-hidden="true"><defs><pattern id="bark" width="24" height="18" patternUnits="userSpaceOnUse"><rect width="24" height="18" fill="#93622F"/><path d="M0 12L12 4L24 12" fill="none" stroke="#6E4520" stroke-width="3" stroke-linecap="round"/><path d="M-12 21L0 13L12 21M12 21L24 13L36 21" fill="none" stroke="#7C5027" stroke-width="2"/></pattern><radialGradient id="heat"><stop offset="0" stop-color="#FF6A4D" stop-opacity=".95"/><stop offset=".45" stop-color="#D94C45" stop-opacity=".55"/><stop offset="1" stop-color="#D94C45" stop-opacity="0"/></radialGradient><radialGradient id="heat2"><stop offset="0" stop-color="#F2B35A" stop-opacity=".9"/><stop offset="1" stop-color="#D99114" stop-opacity="0"/></radialGradient><clipPath id="trunkClip"><path d="M146 440C150 340 158 240 165 168L195 168C202 240 210 340 214 440Z"/></clipPath><clipPath id="band"><rect x="0" y="170" width="360" height="92"><animate attributeName="y" values="170;342;170" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/></rect></clipPath></defs><path d="M40 440H320" stroke="#2C5A43" stroke-width="2"/><ellipse cx="180" cy="442" rx="70" ry="7" fill="#0b2216" opacity=".5"/><path d="M146 440C150 340 158 240 165 168L195 168C202 240 210 340 214 440Z" fill="url(#bark)"/><path d="M146 440C150 340 158 240 165 168L195 168C202 240 210 340 214 440Z" fill="none" stroke="#5A3A1C" stroke-width="1.5"/><g transform="translate(180 168.1) scale(1.15)"><path d="M-13.0 0C-12.35 -0.04000000000000001 -7.8 -0.08000000000000002 -7.15 -0.1L7.15 -0.1C7.8 -0.08000000000000002 12.35 -0.04000000000000001 13.0 0Z" fill="#8A5A2B"/><path d="M0.0 -0.1Q-39.3 -0.5 -65.8 57.8Q-33.1 16.4 0.0 -0.1Z" fill="#2f6b3d" /><path d="M0.0 -0.1Q33.1 16.4 65.8 57.8Q39.3 -0.5 0.0 -0.1Z" fill="#2f6b3d" /><path d="M0.0 -0.1Q-41.4 -8.1 -73.6 29.6Q-39.5 9.8 0.0 -0.1Z" fill="#2f6b3d" /><path d="M0.0 -0.1Q39.5 9.8 73.6 29.6Q41.4 -8.1 0.0 -0.1Z" fill="#2f6b3d" /><path d="M0.0 -0.1Q-38.4 -20.4 -73.7 -8.5Q-42.7 -3.0 0.0 -0.1Z" fill="#3c7c4d" /><path d="M0.0 -0.1Q42.7 -3.0 73.7 -8.5Q38.4 -20.4 0.0 -0.1Z" fill="#3c7c4d" /><path d="M0.0 -0.1Q-27.8 -30.0 -59.7 -38.4Q-37.9 -15.1 0.0 -0.1Z" fill="#3c7c4d" /><path d="M0.0 -0.1Q37.9 -15.1 59.7 -38.4Q27.8 -30.0 0.0 -0.1Z" fill="#3c7c4d" /><path d="M0.0 -0.1Q-12.8 -35.2 -36.9 -54.8Q-27.8 -25.2 0.0 -0.1Z" fill="#3c7c4d" /><path d="M0.0 -0.1Q27.8 -25.2 36.9 -54.8Q12.8 -35.2 0.0 -0.1Z" fill="#6fa57e" /><path d="M0.0 -0.1Q1.0 -33.2 -14.0 -56.4Q-16.4 -28.9 0.0 -0.1Z" fill="#6fa57e" /><path d="M0.0 -0.1Q16.4 -28.9 14.0 -56.4Q-1.0 -33.2 0.0 -0.1Z" fill="#6fa57e" /><path d="M0.0 -0.1Q9.0 -27.6 0.0 -50.1Q-9.0 -27.6 0.0 -0.1Z" fill="#6fa57e" /></g><ellipse cx="171" cy="180" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="165" cy="186" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="170" cy="190" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="164" cy="195" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="169" cy="198" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="189" cy="180" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="195" cy="186" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="190" cy="190" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="196" cy="195" rx="3.6" ry="5" fill="#D99114"/><ellipse cx="191" cy="198" rx="3.6" ry="5" fill="#D99114"/><g clip-path="url(#trunkClip)"><g clip-path="url(#band)"><path d="M146 440C150 340 158 240 165 168L195 168C202 240 210 340 214 440Z" fill="#3A2416"/><path d="M150 170V440" stroke="#4E3220" stroke-width="2"/><path d="M157 170V440" stroke="#4E3220" stroke-width="2"/><path d="M164 170V440" stroke="#4E3220" stroke-width="2"/><path d="M171 170V440" stroke="#4E3220" stroke-width="2"/><path d="M178 170V440" stroke="#4E3220" stroke-width="2"/><path d="M185 170V440" stroke="#4E3220" stroke-width="2"/><path d="M192 170V440" stroke="#4E3220" stroke-width="2"/><path d="M199 170V440" stroke="#4E3220" stroke-width="2"/><path d="M206 170V440" stroke="#4E3220" stroke-width="2"/><path d="M213 170V440" stroke="#4E3220" stroke-width="2"/><path d="M172 200C186 214 168 232 182 250S176 284 190 300" fill="none" stroke="#170C05" stroke-width="7" stroke-linecap="round"/><path d="M172 200C186 214 168 232 182 250S176 284 190 300" fill="none" stroke="#5C3A22" stroke-width="1.4" stroke-linecap="round" opacity=".7"/><path d="M190 236C178 252 196 268 184 286S194 318 180 336" fill="none" stroke="#170C05" stroke-width="7" stroke-linecap="round"/><path d="M190 236C178 252 196 268 184 286S194 318 180 336" fill="none" stroke="#5C3A22" stroke-width="1.4" stroke-linecap="round" opacity=".7"/><path d="M168 300C180 312 166 330 178 346S170 380 184 396" fill="none" stroke="#170C05" stroke-width="7" stroke-linecap="round"/><path d="M168 300C180 312 166 330 178 346S170 380 184 396" fill="none" stroke="#5C3A22" stroke-width="1.4" stroke-linecap="round" opacity=".7"/><path d="M196 330C186 344 200 360 190 376" fill="none" stroke="#170C05" stroke-width="7" stroke-linecap="round"/><path d="M196 330C186 344 200 360 190 376" fill="none" stroke="#5C3A22" stroke-width="1.4" stroke-linecap="round" opacity=".7"/><circle cx="183" cy="282" r="38" fill="url(#heat)"/><circle cx="176" cy="372" r="26" fill="url(#heat2)"/><g transform="translate(182 251) rotate(-20)"><ellipse rx="7" ry="4.2" fill="#EFE2C6"/><path d="M-3 -4V4M0 -4.2V4.2M3 -4V4" stroke="#C9B48E" stroke-width=".9"/><circle cx="6" cy="0" r="2" fill="#8A4A2A"/></g><g transform="translate(186 286) rotate(30)"><ellipse rx="7" ry="4.2" fill="#EFE2C6"/><path d="M-3 -4V4M0 -4.2V4.2M3 -4V4" stroke="#C9B48E" stroke-width=".9"/><circle cx="6" cy="0" r="2" fill="#8A4A2A"/></g><g transform="translate(178 347) rotate(-10)"><ellipse rx="7" ry="4.2" fill="#EFE2C6"/><path d="M-3 -4V4M0 -4.2V4.2M3 -4V4" stroke="#C9B48E" stroke-width=".9"/><circle cx="6" cy="0" r="2" fill="#8A4A2A"/></g><g transform="translate(189 300) rotate(15)"><ellipse rx="7" ry="4.2" fill="#EFE2C6"/><path d="M-3 -4V4M0 -4.2V4.2M3 -4V4" stroke="#C9B48E" stroke-width=".9"/><circle cx="6" cy="0" r="2" fill="#8A4A2A"/></g></g></g><g><animateTransform attributeName="transform" type="translate" values="0 0;0 172;0 0" dur="7s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/><path d="M118 170H242" stroke="#EEF5EF" stroke-width="2"/><path d="M118 262H242" stroke="#EEF5EF" stroke-width="2" opacity=".6"/><rect x="118" y="170" width="124" height="92" fill="#BCD8C3" opacity=".06"/><path d="M118 184V170H132M228 170H242V184M242 248V262H228M132 262H118V248" fill="none" stroke="#BCD8C3" stroke-width="3" stroke-linecap="round"/></g><g class="find"><path d="M214 282H250" stroke="#D94C45" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="214" cy="282" r="4" fill="#D94C45"/><animate attributeName="opacity" values="0;0;1;1;0;0;1;1;0;0" keyTimes="0;.12;.15;.36;.4;.6;.64;.86;.9;1" dur="7s" repeatCount="indefinite"/></g></svg>
+      <span class="xray-chip"><i></i><span lang="ar">نشاط حراري غير طبيعي</span><span lang="en">Unusual heat inside</span></span>
+      <span class="xray-label"><span lang="ar">مسح باسِقة</span><span lang="en">Basqah scan</span></span>
     </div>
   </div>
 </section>
 
-<!-- ============ SYSTEM ============ -->
-<section class="system" id="system">
+<!-- ============ IDEA ============ -->
+<section class="idea" id="idea">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker light reveal"><span lang="ar">الفكرة</span><span lang="en">The idea</span></p>
+      <h2 class="display reveal"><span lang="ar">لكل نخلة توأم رقمـي</span><span lang="en">Every palm, a digital twin</span></h2>
+      <p class="sub light reveal"><span lang="ar">نسخة رقمية لكل نخلة تحفظ تاريخها الصحي، وتكشف أي تغيّر فيها قبل أن يتحول إلى خسارة.</span><span lang="en">A digital copy of every palm that keeps its health history, and flags any change before it becomes a loss.</span></p>
+    </div>
+    <div class="twin-stage reveal">
+      <svg viewBox="0 0 560 420" class="twin-art" aria-hidden="true"><defs><pattern id="tgrid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#BCD8C3" stroke-width=".6" opacity=".18"/></pattern><linearGradient id="tfade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".2" stop-color="#fff"/><stop offset=".85" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="tmask"><rect width="560" height="420" fill="url(#tfade)"/></mask></defs><rect x="300" y="20" width="250" height="390" rx="22" fill="url(#tgrid)" mask="url(#tmask)"/><path d="M30 380H250" stroke="#2C5A43" stroke-width="2"/><path d="M310 380H530" stroke="#BCD8C3" stroke-width="1.4" stroke-dasharray="4 6" opacity=".6"/><ellipse cx="140" cy="382" rx="56" ry="6" fill="#0b2216" opacity=".45"/><g transform="translate(140 380) scale(1.18)"><path d="M-13.0 0C-12.35 -92.0 -7.8 -184.0 -7.15 -230L7.15 -230C7.8 -184.0 12.35 -92.0 13.0 0Z" fill="#8A5A2B"/><path d="M-12.6 -11.0L0 -16.0L12.6 -11.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-12.2 -27.0L0 -32.0L12.2 -27.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-11.8 -43.0L0 -48.0L11.8 -43.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-11.4 -59.0L0 -64.0L11.4 -59.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-11.0 -75.0L0 -80.0L11.0 -75.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-10.6 -91.0L0 -96.0L10.6 -91.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-10.2 -107.0L0 -112.0L10.2 -107.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-9.7 -123.0L0 -128.0L9.7 -123.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-9.3 -139.0L0 -144.0L9.3 -139.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-8.9 -155.0L0 -160.0L8.9 -155.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-8.5 -171.0L0 -176.0L8.5 -171.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-8.1 -187.0L0 -192.0L8.1 -187.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M-7.7 -203.0L0 -208.0L7.7 -203.0" fill="none" stroke="#6E4520" stroke-width="2.4" stroke-linecap="round"/><path d="M0.0 -230.0Q-39.3 -230.4 -65.8 -172.1Q-33.1 -213.5 0.0 -230.0Z" fill="#2f6b3d" /><path d="M0.0 -230.0Q33.1 -213.5 65.8 -172.1Q39.3 -230.4 0.0 -230.0Z" fill="#2f6b3d" /><path d="M0.0 -230.0Q-41.4 -238.0 -73.6 -200.3Q-39.5 -220.1 0.0 -230.0Z" fill="#2f6b3d" /><path d="M0.0 -230.0Q39.5 -220.1 73.6 -200.3Q41.4 -238.0 0.0 -230.0Z" fill="#2f6b3d" /><path d="M0.0 -230.0Q-38.4 -250.3 -73.7 -238.4Q-42.7 -232.9 0.0 -230.0Z" fill="#3c7c4d" /><path d="M0.0 -230.0Q42.7 -232.9 73.7 -238.4Q38.4 -250.3 0.0 -230.0Z" fill="#3c7c4d" /><path d="M0.0 -230.0Q-27.8 -259.9 -59.7 -268.3Q-37.9 -245.0 0.0 -230.0Z" fill="#3c7c4d" /><path d="M0.0 -230.0Q37.9 -245.0 59.7 -268.3Q27.8 -259.9 0.0 -230.0Z" fill="#3c7c4d" /><path d="M0.0 -230.0Q-12.8 -265.1 -36.9 -284.7Q-27.8 -255.1 0.0 -230.0Z" fill="#3c7c4d" /><path d="M0.0 -230.0Q27.8 -255.1 36.9 -284.7Q12.8 -265.1 0.0 -230.0Z" fill="#6fa57e" /><path d="M0.0 -230.0Q1.0 -263.1 -14.0 -286.3Q-16.4 -258.8 0.0 -230.0Z" fill="#6fa57e" /><path d="M0.0 -230.0Q16.4 -258.8 14.0 -286.3Q-1.0 -263.1 0.0 -230.0Z" fill="#6fa57e" /><path d="M0.0 -230.0Q9.0 -257.5 0.0 -280.0Q-9.0 -257.5 0.0 -230.0Z" fill="#6fa57e" /><ellipse cx="-8" cy="-220" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="-13" cy="-215" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="-9" cy="-212" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="-14" cy="-208" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="-10" cy="-205" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="8" cy="-220" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="13" cy="-215" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="9" cy="-212" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="14" cy="-208" rx="3.2" ry="4.4" fill="#D99114"/><ellipse cx="10" cy="-205" rx="3.2" ry="4.4" fill="#D99114"/></g><g transform="translate(420 380) scale(1.18)" class="wire"><path d="M-13 0C-12.35 -92.0 -7.8 -184.0 -7.15 -230L7.15 -230C7.8 -184.0 12.35 -92.0 13 0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6"/><path d="M-12.6 -11.0L0 -16.0L12.6 -11.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-12.2 -27.0L0 -32.0L12.2 -27.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-11.8 -43.0L0 -48.0L11.8 -43.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-11.4 -59.0L0 -64.0L11.4 -59.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-11.0 -75.0L0 -80.0L11.0 -75.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-10.6 -91.0L0 -96.0L10.6 -91.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-10.2 -107.0L0 -112.0L10.2 -107.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-9.7 -123.0L0 -128.0L9.7 -123.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-9.3 -139.0L0 -144.0L9.3 -139.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-8.9 -155.0L0 -160.0L8.9 -155.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-8.5 -171.0L0 -176.0L8.5 -171.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-8.1 -187.0L0 -192.0L8.1 -187.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M-7.7 -203.0L0 -208.0L7.7 -203.0" fill="none" stroke="#BCD8C3" stroke-width="1.1199999999999999" opacity=".7"/><path d="M0 0V-230" stroke="#BCD8C3" stroke-width="0.96" stroke-dasharray="3 5" opacity=".6"/><path d="M0.0 -230.0Q-39.3 -230.4 -65.8 -172.1Q-33.1 -213.5 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L-65.8 -172.1" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q33.1 -213.5 65.8 -172.1Q39.3 -230.4 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L65.8 -172.1" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q-41.4 -238.0 -73.6 -200.3Q-39.5 -220.1 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L-73.6 -200.3" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q39.5 -220.1 73.6 -200.3Q41.4 -238.0 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L73.6 -200.3" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q-38.4 -250.3 -73.7 -238.4Q-42.7 -232.9 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L-73.7 -238.4" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q42.7 -232.9 73.7 -238.4Q38.4 -250.3 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L73.7 -238.4" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q-27.8 -259.9 -59.7 -268.3Q-37.9 -245.0 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L-59.7 -268.3" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q37.9 -245.0 59.7 -268.3Q27.8 -259.9 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L59.7 -268.3" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q-12.8 -265.1 -36.9 -284.7Q-27.8 -255.1 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L-36.9 -284.7" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q27.8 -255.1 36.9 -284.7Q12.8 -265.1 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L36.9 -284.7" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q1.0 -263.1 -14.0 -286.3Q-16.4 -258.8 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L-14.0 -286.3" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q16.4 -258.8 14.0 -286.3Q-1.0 -263.1 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L14.0 -286.3" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><path d="M0.0 -230.0Q9.0 -257.5 0.0 -280.0Q-9.0 -257.5 0.0 -230.0Z" fill="none" stroke="#BCD8C3" stroke-width="1.6" stroke-linejoin="round" /><path d="M0 -230L0.0 -280.0" stroke="#BCD8C3" stroke-width="0.8" opacity=".55"/><circle cx="-65.8" cy="-172.1" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:0"/><circle cx="65.8" cy="-172.1" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:1"/><circle cx="-73.6" cy="-200.3" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:2"/><circle cx="73.6" cy="-200.3" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:3"/><circle cx="-73.7" cy="-238.4" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:4"/><circle cx="73.7" cy="-238.4" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:5"/><circle cx="-59.7" cy="-268.3" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:6"/><circle cx="59.7" cy="-268.3" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:7"/><circle cx="-36.9" cy="-284.7" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:8"/><circle cx="36.9" cy="-284.7" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:9"/><circle cx="-14.0" cy="-286.3" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:10"/><circle cx="14.0" cy="-286.3" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:11"/><circle cx="0.0" cy="-280.0" r="3" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6" class="node" style="--i:12"/><circle cx="0" cy="-230" r="4.5" fill="#BCD8C3"/><circle cx="0" cy="0" r="3.5" fill="#183A2B" stroke="#BCD8C3" stroke-width="1.6"/></g><path class="flow-a" d="M212 150C260 120 300 120 348 150" fill="none" stroke="#BCD8C3" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/><path class="flow-b" d="M348 250C300 280 260 280 212 250" fill="none" stroke="#D99114" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/><path d="M340 142l10 8-12 4" fill="none" stroke="#BCD8C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M220 258l-10-8 12-4" fill="none" stroke="#D99114" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="tag tag-real"><span lang="ar">النخلة في المزرعة</span><span lang="en">The palm in the field</span></span>
+      <span class="tag tag-twin"><span lang="ar">توأمها الرقمي</span><span lang="en">Its digital twin</span></span>
+      <span class="float f1"><b><span lang="ar">آخر مسح</span><span lang="en">Last scan</span></b><span lang="ar">اليوم</span><span lang="en">Today</span></span>
+      <span class="float f2"><b><span lang="ar">السجل الصحي</span><span lang="en">Health record</span></b><span lang="ar">محفوظ ومتصل</span><span lang="en">Kept and connected</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW ============ -->
+<section class="how" id="system">
   <div class="wrap">
     <div class="sec-head">
       <p class="kicker reveal"><span lang="ar">كيف تعمل</span><span lang="en">How it works</span></p>
-      <h2 class="reveal"><span lang="ar">نمسح، نحلل، ننبّه</span><span lang="en">Scan. Analyse. Alert.</span></h2>
-      <p class="sub reveal"><span lang="ar">منظومة ذكية للإنذار المبكر، تعمل بالدرون والذكاء الاصطناعي.</span><span lang="en">A smart early-warning system, powered by drones and AI.</span></p>
+      <h2 class="big reveal"><span lang="ar">من السماء… إلى النخلة</span><span lang="en">From the sky, to the palm</span></h2>
     </div>
-    <ol class="pillars">
-      <li class="pillar reveal">
-        <div class="vig vig-photo" aria-hidden="true">
-          <div class="shot"><span class="frame"></span></div>
-          <div class="chip"><i></i><span lang="ar">نخلة ٠١٤</span><span lang="en">Palm 014</span></div>
-        </div>
-        <span class="step-n"><span lang="ar">٠١</span><span lang="en">01</span></span>
-        <h3><span lang="ar">مسح بالدرون</span><span lang="en">Drone scan</span></h3>
-        <p><span lang="ar">نصوّر المزرعة نخلةً نخلة.</span><span lang="en">We image the farm, palm by palm.</span></p>
-      </li>
-      <li class="pillar reveal">
-        <div class="vig vig-bars" aria-hidden="true">
-          <div class="bars"><i style="--h:42%"></i><i style="--h:64%"></i><i style="--h:38%"></i><i class="hot" style="--h:88%"></i><i style="--h:52%"></i></div>
-          <span class="pill watch"><span lang="ar">مؤشر مبكر</span><span lang="en">Early signal</span></span>
-        </div>
-        <span class="step-n"><span lang="ar">٠٢</span><span lang="en">02</span></span>
-        <h3><span lang="ar">تحليل ذكي</span><span lang="en">Smart analysis</span></h3>
-        <p><span lang="ar">نلتقط العلامات المبكرة قبل أن تُرى بالعين.</span><span lang="en">We catch early signs before the eye can.</span></p>
-      </li>
-      <li class="pillar reveal">
-        <div class="vig vig-task" aria-hidden="true">
-          <div class="task"><span class="check"><svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b><span lang="ar">تنبيه مبكر</span><span lang="en">Early alert</span></b><small><span lang="ar">تم التدخل</span><span lang="en">Handled</span></small></div></div>
-          <div class="task ghost"><span class="check"></span><div><b></b><small></small></div></div>
-        </div>
-        <span class="step-n"><span lang="ar">٠٣</span><span lang="en">03</span></span>
-        <h3><span lang="ar">تنبيه في وقته</span><span lang="en">A timely alert</span></h3>
-        <p><span lang="ar">يعرف المزارع أين يتدخل، ومتى.</span><span lang="en">The farmer knows where to act, and when.</span></p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ DIGITAL TWIN ============ -->
-<section class="twin">
-  <div class="wrap twin-in">
-    <div class="twin-copy">
-      <p class="kicker light reveal"><span lang="ar">الفكرة</span><span lang="en">The idea</span></p>
-      <h2 class="display reveal"><span lang="ar">توأم رقمـي</span><span lang="en">A digital twin</span></h2>
-      <p class="sub light reveal"><span lang="ar">لكل نخلة نسخة رقمية تحفظ تاريخها الصحي، فتعرف حالتها في أي وقت.</span><span lang="en">Every palm gets a digital copy that keeps its health history, so you always know how it’s doing.</span></p>
-      
-    </div>
-    <div class="twin-card reveal" aria-hidden="true">
-      <div class="tc-head">
-        <div class="tc-palm"><svg viewBox="0 0 40 40"><g fill="none" stroke="#36633e" stroke-width="2" stroke-linecap="round"><path d="M20 36V18"/><path d="M20 18c-5-4-11-4-15-1M20 18c5-4 11-4 15-1M20 18c-3-6-3-10 0-14M20 18c3-6 3-10 0-14M20 18c-6-1-10 2-12 6M20 18c6-1 10 2 12 6"/></g></svg></div>
-        <div><b><span lang="ar">نخلة ٠١٤</span><span lang="en">Palm 014</span></b><small><span lang="ar">القطاع الشمالي · سكّري</span><span lang="en">North block · Sukkari</span></small></div>
-        <span class="pill ok"><span lang="ar">بحالة جيدة</span><span lang="en">Doing well</span></span>
-      </div>
-      <ol class="timeline">
-        <li><i class="ok"></i><div><b><span lang="ar">مسح دوري</span><span lang="en">Routine scan</span></b><small><span lang="ar">اليوم</span><span lang="en">Today</span></small></div></li>
-        <li><i class="act"></i><div><b><span lang="ar">تدخل وقائي</span><span lang="en">Preventive action</span></b><small><span lang="ar">قبل ١٢ يوماً</span><span lang="en">12 days ago</span></small></div></li>
-        <li><i class="watch"></i><div><b><span lang="ar">تنبيه مبكر</span><span lang="en">Early alert</span></b><small><span lang="ar">قبل ١٤ يوماً</span><span lang="en">14 days ago</span></small></div></li>
+    <div class="story reveal">
+      <div class="rail" aria-hidden="true"><span class="rail-fill"></span><i class="n1"></i><i class="n2"></i><i class="n3"></i></div>
+      <ol class="beats">
+        <li class="beat b1">
+          <div class="scene scene-scan" aria-hidden="true"><div class="field"></div><div class="sweep"></div><div class="drone"><span></span></div></div>
+          <span class="beat-n"><span lang="ar">١</span><span lang="en">1</span></span>
+          <h3><span lang="ar">نمسح المزرعة بالدرون</span><span lang="en">We scan the farm by drone</span></h3>
+          <p><span lang="ar">صور لكل نخلة، من الأعلى.</span><span lang="en">Every palm, imaged from above.</span></p>
+        </li>
+        <li class="beat b2">
+          <div class="scene scene-find" aria-hidden="true"><div class="field"></div><span class="spot"></span><span class="ring r1"></span><span class="ring r2"></span></div>
+          <span class="beat-n"><span lang="ar">٢</span><span lang="en">2</span></span>
+          <h3><span lang="ar">نحلل كل نخلة بالذكاء الاصطناعي</span><span lang="en">AI reads every palm</span></h3>
+          <p><span lang="ar">ونلتقط العلامات المبكرة.</span><span lang="en">And catches the early signs.</span></p>
+        </li>
+        <li class="beat b3">
+          <div class="scene scene-alert" aria-hidden="true">
+            <div class="lock"><span class="time">9:41</span>
+              <div class="notif"><img src="assets/basqah-mark-white.svg" alt=""><div><b><span lang="ar">باسِقة</span><span lang="en">Basqah</span><small><span lang="ar">الآن</span><span lang="en">now</span></small></b><span><span lang="ar">نخلة في مزرعتك تحتاج انتباهك</span><span lang="en">A palm on your farm needs attention</span></span></div></div>
+            </div>
+          </div>
+          <span class="beat-n"><span lang="ar">٣</span><span lang="en">3</span></span>
+          <h3><span lang="ar">ننبّهك في الوقت المناسب</span><span lang="en">We alert you in time</span></h3>
+          <p><span lang="ar">قبل أن تنتشر الإصابة.</span><span lang="en">Before it spreads.</span></p>
+        </li>
       </ol>
     </div>
   </div>
@@ -156,23 +147,38 @@
   <div class="wrap">
     <div class="sec-head center">
       <p class="kicker reveal"><span lang="ar">لمن باسِقة</span><span lang="en">Who it’s for</span></p>
-      <h2 class="reveal"><span lang="ar">نحمي النخيل معاً</span><span lang="en">Protecting palms, together</span></h2>
+      <h2 class="big reveal"><span lang="ar">صُممت لكل من يهمّه النخيل</span><span lang="en">Built for everyone who cares about palms</span></h2>
     </div>
     <ul class="audience">
-      <li class="reveal">
-        <span class="au-ic" aria-hidden="true"><svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 28V14"/><path d="M16 14c-4-3-8-3-11-1M16 14c4-3 8-3 11-1M16 14c-2-4-2-8 0-10M16 14c2-4 2-8 0-10"/><path d="M8 28h16"/></g></svg></span>
+      <li class="aud aud-farm reveal">
+        <svg class="aud-art" viewBox="0 0 300 150" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 132H280" stroke="#B89C6C" stroke-width="2"/>
+          <g stroke="#8A5A2B" stroke-width="7"><path d="M80 132V62"/><path d="M150 132V44"/><path d="M220 132V70"/></g>
+          <g stroke="#36633e" stroke-width="5"><path d="M80 62c-14-10-28-10-38-2M80 62c14-10 28-10 38-2M80 62c-6-12-6-22 0-30M80 62c6-12 6-22 0-30"/><path d="M150 44c-16-12-32-12-44-2M150 44c16-12 32-12 44-2M150 44c-7-14-7-26 0-34M150 44c7-14 7-26 0-34"/><path d="M220 70c-13-9-26-9-35-2M220 70c13-9 26-9 35-2M220 70c-5-11-5-20 0-27M220 70c5-11 5-20 0-27"/></g></g>
+          <circle cx="182" cy="28" r="14" fill="#3c7c4d"/><path d="M175 28l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3><span lang="ar">للمزارعين</span><span lang="en">Farmers</span></h3>
         <p><span lang="ar">اطمئن على نخلك، واعرف مبكراً أي نخلة تحتاجك.</span><span lang="en">Peace of mind for your palms, and an early word on which one needs you.</span></p>
+        <a class="aud-cta" href="mailto:basqah.sa@gmail.com?subject=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D9%85%D8%B2%D8%A7%D8%B1%D8%B9"><span lang="ar">تواصل معنا</span><span lang="en">Talk to us</span><i></i></a>
       </li>
-      <li class="reveal">
-        <span class="au-ic" aria-hidden="true"><svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 25l7-8 5 4 10-12"/><path d="M21 9h6v6"/></g></svg></span>
+      <li class="aud aud-inv reveal">
+        <svg class="aud-art" viewBox="0 0 300 150" aria-hidden="true"><g stroke-linecap="round">
+          <path d="M20 132H280" stroke="#3E6A55" stroke-width="2"/>
+          <rect x="52" y="96" width="30" height="36" rx="6" fill="#2C5A43"/><rect x="100" y="78" width="30" height="54" rx="6" fill="#2F6142"/><rect x="148" y="58" width="30" height="74" rx="6" fill="#3c7c4d"/><rect x="196" y="36" width="30" height="96" rx="6" fill="#BCD8C3"/>
+          <g fill="none" stroke="#D99114" stroke-width="3" stroke-linejoin="round"><path d="M44 92L104 70L150 52L206 22"/><path d="M194 20l13 1-4 12"/></g>
+          <g fill="none" stroke="#183A2B" stroke-width="3.5"><path d="M211 36c-7-6-14-6-19-1M211 36c7-6 14-6 19-1M211 36c-3-7-3-12 0-16M211 36c3-7 3-12 0-16" transform="translate(0 0)"/></g></g></svg>
         <h3><span lang="ar">للمستثمرين</span><span lang="en">Investors</span></h3>
         <p><span lang="ar">فرصة في التقنية الزراعية، لحماية واحدة من أهم ثروات المملكة.</span><span lang="en">An agritech opportunity protecting one of the Kingdom’s most valued crops.</span></p>
+        <a class="aud-cta" href="mailto:basqah.sa@gmail.com?subject=%D9%81%D8%B1%D8%B5%D8%A9%20%D8%A7%D8%B3%D8%AA%D8%AB%D9%85%D8%A7%D8%B1"><span lang="ar">تواصل معنا</span><span lang="en">Talk to us</span><i></i></a>
       </li>
-      <li class="reveal">
-        <span class="au-ic" aria-hidden="true"><svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15l6-6 6 4 6-4 6 6"/><path d="M10 9l-4 10 6 6M22 9l4 10-6 6M12 25l4-4 4 4"/></g></svg></span>
+      <li class="aud aud-org reveal">
+        <svg class="aud-art" viewBox="0 0 300 150" aria-hidden="true"><g stroke-linecap="round">
+          <g stroke="#36633e" stroke-width="2" opacity=".55"><path d="M150 76L66 40M150 76L234 40M150 76L60 118M150 76L240 118M66 40L60 118M234 40L240 118"/></g>
+          <g fill="#fff" stroke="#36633e" stroke-width="3"><circle cx="66" cy="40" r="13"/><circle cx="234" cy="40" r="13"/><circle cx="60" cy="118" r="13"/><circle cx="240" cy="118" r="13"/></g>
+          <circle cx="150" cy="76" r="34" fill="#36633e"/>
+          <g fill="none" stroke="#fff" stroke-width="3.5"><path d="M150 96V70M150 70c-8-6-16-6-22-2M150 70c8-6 16-6 22-2M150 70c-4-8-4-14 0-18M150 70c4-8 4-14 0-18"/></g></g></svg>
         <h3><span lang="ar">للجهات والشركاء</span><span lang="en">Organisations &amp; partners</span></h3>
         <p><span lang="ar">نتعاون مع من يشاركنا هدف حماية النخيل.</span><span lang="en">We work with anyone who shares the goal of protecting palms.</span></p>
+        <a class="aud-cta" href="mailto:basqah.sa@gmail.com?subject=%D8%B4%D8%B1%D8%A7%D9%83%D8%A9"><span lang="ar">تواصل معنا</span><span lang="en">Talk to us</span><i></i></a>
       </li>
     </ul>
   </div>
@@ -262,7 +268,7 @@
   </div>
 </footer>
 
-<script src="hero.js?v=202611082319"></script>
-<script src="main.js?v=202611082319"></script>
+<script src="hero.js?v=202611082329"></script>
+<script src="main.js?v=202611082329"></script>
 </body>
 </html>
