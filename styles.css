@@ -4,6 +4,7 @@
 @font-face { font-family: "Thmanyah Sans"; font-weight: 400; font-display: swap; src: url("fonts/thmanyahsans-Regular.woff2") format("woff2"); }
 @font-face { font-family: "Thmanyah Sans"; font-weight: 500; font-display: swap; src: url("fonts/thmanyahsans-Medium.woff2") format("woff2"); }
 @font-face { font-family: "Thmanyah Sans"; font-weight: 700; font-display: swap; src: url("fonts/thmanyahsans-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Thmanyah Serif Display"; font-weight: 500; font-display: swap; src: url("fonts/thmanyahserifdisplay-Medium.woff2") format("woff2"); }
 @font-face { font-family: "Thmanyah Serif Display"; font-weight: 700; font-display: swap; src: url("fonts/thmanyahserifdisplay-Bold.woff2") format("woff2"); }
 
 :root {
@@ -425,3 +426,14 @@ html[lang="en"] .contact-card h2 { line-height: 1.22; letter-spacing: -.01em; }
   .foot { padding-block: 32px calc(48px + env(safe-area-inset-bottom)); }
   .contact { padding-bottom: 56px; }
 }
+
+/* bilingual logo lockup: basqah | باسِقة  (Arabic in Serif Display Medium at ~0.6× the wordmark height) */
+.lk { display: inline-flex; align-items: center; gap: 10px; direction: ltr; text-decoration: none; }
+.lk-mark { position: relative; display: block; height: 30px; }
+.lk-mark img { height: 30px; width: auto; }
+.lk-rule { width: 1.5px; height: 23px; background: currentColor; opacity: .5; color: var(--brand-200); transition: color .3s; }
+.lk-ar { font-family: var(--serif); font-weight: 500; font-size: 18px; line-height: 1; transform: translateY(2px); color: #fff; transition: color .3s; }
+.nav.solid .lk-ar, .nav.solid .lk-rule { color: var(--brand-600); }
+.brand.lk { height: auto; }
+.lk-foot .lk-rule, .lk-foot .lk-ar { color: var(--brand-600); }
+.lk-foot .lk-ar { font-size: 17px; }
