@@ -161,14 +161,10 @@ html[dir="rtl"] .st-line { background: linear-gradient(270deg, rgb(188 216 195 /
 .stage[data-step="2"] .st-ring { animation: stRing 2.4s ease-out infinite; } .stage[data-step="2"] .st-ring.two { animation-delay: 1.2s; }
 @keyframes stRing { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(1.7); opacity: 0; } }
 /* step 3: the phone gets the alert */
-.st-phone { position: absolute; left: 50%; top: 50%; width: 54%; aspect-ratio: 71.5 / 147; margin-left: -27%; border-radius: 15% / 7.3%; padding: 2.6%; background: linear-gradient(145deg, #2b2f2d, #0c0f0d 40%, #1d211f); box-shadow: inset 0 0 0 1.5px #4a4f4c, 0 30px 60px rgb(0 0 0 / .5); transform: translateY(calc(-50% + 120%)); transition: transform 1s var(--ease); z-index: 2; }
-.ip-btn { position: absolute; width: 3px; border-radius: 2px; background: #2b2f2d; }
-.ip-a { left: -3px; top: 18%; height: 6%; } .ip-b { left: -3px; top: 27%; height: 10%; } .ip-c { right: -3px; top: 24%; height: 14%; }
-.st-screen { position: relative; height: 100%; border-radius: 13% / 6.2%; overflow: hidden; background: radial-gradient(120% 70% at 50% 0%, #4e8a5b, #24533a 55%, #12321f); }
-.ip-island { position: absolute; top: 3%; left: 50%; width: 32%; height: 4.2%; margin-left: -16%; border-radius: 999px; background: #000; }
-.st-time { display: block; margin-top: 18%; text-align: center; font-family: -apple-system, "SF Pro Display", "SF Pro", "Helvetica Neue", system-ui, sans-serif; font-size: clamp(30px, 3.4vw, 46px); font-weight: 600; letter-spacing: -.01em; line-height: 1; color: rgb(255 255 255 / .94); }
-.ip-home { position: absolute; bottom: 2.2%; left: 50%; width: 34%; height: 4px; margin-left: -17%; border-radius: 3px; background: rgb(255 255 255 / .8); }
-.st-notif { position: absolute; inset-inline: 5%; top: 33%; display: flex; gap: 10px; align-items: flex-start; padding: 11px 12px; border-radius: 18px; background: rgb(255 255 255 / .95); box-shadow: 0 12px 28px rgb(0 0 0 / .28); opacity: 0; transform: translateY(-18px) scale(.95); transition: opacity .6s var(--ease) .55s, transform .8s var(--ease) .55s; }
+.st-phone { position: absolute; inset: 0; z-index: 2; transform: translateY(100%); transition: transform 1s var(--ease); }
+.st-screen { position: relative; height: 100%; overflow: hidden; background: linear-gradient(180deg, rgb(15 46 26 / .25), rgb(15 46 26 / .88)); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+.st-time { display: block; margin-top: 14%; text-align: center; font-family: -apple-system, "SF Pro Display", "SF Pro", "Helvetica Neue", system-ui, sans-serif; font-size: clamp(52px, 6vw, 84px); font-weight: 600; letter-spacing: -.01em; line-height: 1; color: rgb(255 255 255 / .95); }
+.st-notif { position: absolute; inset-inline: 7%; top: 36%; display: flex; gap: 10px; align-items: flex-start; padding: 11px 12px; border-radius: 18px; background: rgb(255 255 255 / .95); box-shadow: 0 12px 28px rgb(0 0 0 / .28); opacity: 0; transform: translateY(-18px) scale(.95); transition: opacity .6s var(--ease) .55s, transform .8s var(--ease) .55s; }
 .app-ic { width: 34px; height: 34px; flex: none; border-radius: 9px; background: #fff; display: grid; place-items: center; box-shadow: inset 0 0 0 1px #dde1da; }
 .app-ic img { width: 22px; height: 22px; }
 .n-body { flex: 1; min-width: 0; display: grid; grid-template-columns: 1fr auto; column-gap: 8px; align-items: baseline; }
@@ -188,7 +184,7 @@ html[dir="rtl"] .st-line { background: linear-gradient(270deg, rgb(188 216 195 /
 .stage[data-step="2"] .st-field { transform: scale(1.08); }
 .stage[data-step="3"] .st-field { transform: scale(1.12); filter: brightness(.6); }
 .stage[data-step="3"] .st-focus { opacity: 0; }
-.stage[data-step="3"] .st-phone { transform: translateY(-50%); }
+.stage[data-step="3"] .st-phone { transform: none; }
 .stage[data-step="3"] .st-notif { opacity: 1; transform: none; }
 .stage[data-step="2"] .st-chip .c1, .stage[data-step="3"] .st-chip .c1 { display: none; }
 .stage[data-step="2"] .st-chip .c2 { display: inline; }
@@ -385,7 +381,6 @@ html[lang="en"] .contact-card h2 { line-height: 1.22; letter-spacing: -.01em; }
   .step-n { font-size: 26px; width: 38px; }
   .step h3 { font-size: 19px; }
   .step p { font-size: 16px; }
-  .st-phone { width: 46%; margin-left: -23%; }
 }
 @media (max-width: 600px) {
   .members { gap: 12px; }
@@ -399,19 +394,34 @@ html[lang="en"] .contact-card h2 { line-height: 1.22; letter-spacing: -.01em; }
   .b-links .ic { width: 28px; height: 28px; }
 }
 
-/* phones: the stage itself is the lock screen — no bezel, the notification gets the full width */
+/* phones */
 @media (max-width: 600px) {
   .stage { aspect-ratio: 4 / 4.4; }
-  .st-phone { inset: 0; left: 0; top: 0; width: auto; margin: 0; aspect-ratio: auto; border-radius: 0; padding: 0; background: none; box-shadow: none; transform: translateY(100%); }
-  .stage[data-step="3"] .st-phone { transform: none; }
-  .ip-btn, .ip-island, .ip-home { display: none; }
-  .st-screen { border-radius: 0; background: linear-gradient(180deg, rgb(15 46 26 / .2), rgb(15 46 26 / .85)); }
   .st-time { margin-top: 64px; font-size: 54px; }
   .st-notif { inset-inline: 16px; top: 140px; padding: 12px 14px; border-radius: 20px; }
   .n-body b, .n-text { font-size: 14.5px; }
   .contact-card h2 { font-size: 30px; }
   html[lang="en"] .contact-card h2 { font-size: 28px; line-height: 1.25; }
-  .contact-card h2 br { display: none; }
+  html[lang="en"] .contact-card h2 br { display: none; }
   .c-line { display: flex; flex-direction: column; gap: 6px; align-items: center; }
   .c-line .dot { display: none; }
+}
+
+/* touch screens: a finger plays the same animations as the mouse */
+.aud.hot { transform: translateY(-6px); box-shadow: var(--shadow-float); }
+.aud.hot .aud-art { transform: scale(1.04); }
+.aud-farm.hot .p1 { transform: rotate(-2.5deg); } .aud-farm.hot .p2 { transform: rotate(1.8deg); } .aud-farm.hot .p3 { transform: rotate(-1.8deg); }
+.aud-inv.hot .inv-art i { transform: scaleY(1.12); } .aud-inv.hot .inv-art i.top img { transform: scaleY(.893) scale(1.08); transition-delay: 0s; }
+.aud-org.hot .orbit { animation-duration: 4s; }
+.member.touched .ph .twin, .member.touched .ph::after, .member.touched .ph .grid { clip-path: inset(0); }
+.member.touched .ph .scan { top: 100%; opacity: 1; }
+
+/* footer on phones: centred and stacked */
+@media (max-width: 600px) {
+  .foot-in { flex-direction: column; justify-content: center; text-align: center; gap: 10px; padding-top: 28px; }
+  .foot-logo { height: 26px; }
+  .motto { font-size: 17px; }
+  .copy { margin: 4px 0 0; width: auto; }
+  .foot { padding-block: 32px calc(48px + env(safe-area-inset-bottom)); }
+  .contact { padding-bottom: 56px; }
 }

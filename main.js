@@ -66,11 +66,27 @@
       m.classList.add('squash');
       setTimeout(function () { swap(); m.classList.remove('squash'); setTimeout(function () { busy = false; }, 280); }, 270);
     }
-    front.addEventListener('click', function () { toggle(true); });
+    var touchedAt = 0;
+    front.addEventListener('touchstart', function () { m.classList.add('touched'); touchedAt = Date.now(); }, { passive: true });
+    front.addEventListener('click', function () {
+      var wait = touchedAt ? Math.max(0, 650 - (Date.now() - touchedAt)) : 0;   // let the scan play before flipping
+      touchedAt = 0;
+      setTimeout(function () { toggle(true); }, wait);
+    });
+    back.addEventListener('touchstart', function () { m.classList.remove('touched'); }, { passive: true });
     back.addEventListener('click', function (e) { if (!e.target.closest('a')) toggle(false); });
     back.addEventListener('keydown', function (e) {
       if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a')) { e.preventDefault(); toggle(false); }
     });
+  });
+
+  // audience cards: a finger plays the hover animation, every time
+  document.querySelectorAll('.aud').forEach(function (card) {
+    var t = null;
+    card.addEventListener('touchstart', function () {
+      card.classList.remove('hot'); void card.offsetWidth; card.classList.add('hot');
+      clearTimeout(t); t = setTimeout(function () { card.classList.remove('hot'); }, 1600);
+    }, { passive: true });
   });
 
   // reveal on scroll (staggered within each group); founders get "scanned" once on touch screens
@@ -88,7 +104,6 @@
       var delay = Math.min(sibs.indexOf(el), 5) * 90;
       el.style.transitionDelay = delay + 'ms';
       el.classList.add('in');
-      if (touch && el.classList.contains('member')) setTimeout(function () { el.classList.add('scanned'); }, delay + 700);
       io.unobserve(el);
     });
   }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
