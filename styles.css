@@ -284,9 +284,9 @@ html[dir="rtl"] .aud-cta i::after { transform: rotate(-45deg) translate(1px, 1px
 .contact { padding-top: 0; }
 .contact-card { position: relative; overflow: hidden; text-align: center; background: var(--brand-900); color: #fff; border-radius: 36px; padding: clamp(56px, 7vw, 96px) 24px; }
 .contact-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 120% at 50% 120%, rgb(60 124 77 / .55), transparent 60%); }
-.c-mark { position: absolute; width: 260px; opacity: .07; inset-inline-end: 5%; bottom: -40px; }
+.c-mark { position: absolute; width: 260px; opacity: .07; left: 5%; bottom: -40px; }   /* bottom-left in both languages */
 .contact-card h2 { position: relative; color: #fff; font-family: var(--serif); font-size: clamp(32px, 4.2vw, 56px); line-height: 1.55; }
-html[lang="en"] .contact-card h2 { line-height: 1.22; letter-spacing: -.01em; }
+html[lang="en"] .contact-card h2 { line-height: 1.55; letter-spacing: -.01em; }   /* same line spacing as Arabic */
 .c-line a, .c-line bdi { color: inherit; text-decoration: none; }
 .c-actions { position: relative; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
 .c-line { position: relative; margin-top: 28px; font-size: 15px; color: rgb(255 255 255 / .66); }
@@ -402,7 +402,7 @@ html[lang="en"] .contact-card h2 { line-height: 1.22; letter-spacing: -.01em; }
   .st-notif { inset-inline: 16px; top: 140px; padding: 12px 14px; border-radius: 20px; }
   .n-body b, .n-text { font-size: 14.5px; }
   .contact-card h2 { font-size: 30px; }
-  html[lang="en"] .contact-card h2 { font-size: 28px; line-height: 1.25; }
+  html[lang="en"] .contact-card h2 { font-size: 28px; }
   html[lang="en"] .contact-card h2 br { display: none; }
   .c-line { display: flex; flex-direction: column; gap: 6px; align-items: center; }
   .c-line .dot { display: none; }
